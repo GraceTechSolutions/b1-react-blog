@@ -1,0 +1,24 @@
+.main {
+    background-color: #fff;
+    color: #1D4ED8;
+    position: static;
+}
+
+.nav {
+    margin: 0 150px;
+}
+
+.logo {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.pages {
+    display: inline;
+    font-size: 15px;
+    margin-right: 20px;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

@@ -1,4 +1,5 @@
 .container{
+    margin-top: 50px;
     padding: 40px 400px;
 }
 
@@ -17,7 +18,7 @@
 .username{
     text-align: right;
     cursor: pointer;
-    color: rgb(49, 47, 47);
+    // color: rgb(49, 47, 47);
     &::before{
         content: 'By: ';
     }
