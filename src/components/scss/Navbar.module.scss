@@ -13,10 +13,15 @@
     cursor: pointer;
 }
 
+.flex {
+    display: flex;
+}
+
 .pages {
-    display: inline;
     font-size: 15px;
-    margin-right: 20px;
+    margin: 10px 20px !important;
+    // display: block;
+    text-transform: uppercase;
     &:hover {
         text-decoration: underline;
         cursor: pointer;
