@@ -14,7 +14,7 @@ export default function Navbar() {
               </Typography>
               <Box className={classes.flex}>
                   {links.map((link) => (
-                      <Typography className={classes.pages} variant='h6'>{link}</Typography>
+                      <Typography key={link} className={classes.pages} variant='h6'>{link}</Typography>
                   ))}
               </Box>
           </Toolbar>

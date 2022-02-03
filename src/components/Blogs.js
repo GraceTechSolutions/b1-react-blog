@@ -23,7 +23,7 @@ export default function Blogs() {
         // console.log(data);
         setUsers(data)
       })
-    }, [])
+    }, [blogs, users])
 
     // useEffect(fun)
     // useEffect(fun, [])
