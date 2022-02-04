@@ -7,7 +7,7 @@ import axios from 'axios';
 export default function Card(props) {
   let {blog, user} = props
   let ref = `blog/${blog.id}`
-  // let subTitle = `Blog ID: ${blog.id} | User ID: ${blog.userId}`
+  let subTitle = `Blog ID: ${blog.id} | User ID: ${blog.userId}`
   // console.log(user);
   return(
       <Card_>
@@ -15,12 +15,12 @@ export default function Card(props) {
           avatar={
             <Avatar alt=''/>
           }
-          // title={user.name || ''}
-          // subheader={user.email || ''}
+          title={user.name}
+          subheader={user.email}
           />
           <CardContent>
             <Typography variant='h5'>{blog.title}</Typography>
-            <Typography variant='subtitle1'>Sports</Typography>
+            <Typography variant='subtitle1'>{subTitle}</Typography>
             <Typography sx={{marginTop: '10px'}}>{blog.body}</Typography>
           </CardContent>
           <CardActions>

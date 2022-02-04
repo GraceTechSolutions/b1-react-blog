@@ -6,24 +6,23 @@ import axios from 'axios';
 const postUrl = 'https://jsonplaceholder.typicode.com/posts'
 let userUrl = 'https://jsonplaceholder.typicode.com/users'
 
+// let res = await fetch(url)
+// let data = await res.json()
 
 export default function Blogs() {
     const [blogs, setBlogs] = useState([])
     const [users, setUsers] = useState([])
     useEffect(()=>{
-      axios.get(postUrl)
-      .then(res => {
-        let data = res.data
-        // console.log(data);
-        setBlogs(data)
-      })
-      axios.get(userUrl)
-      .then(res => {
-        let data = res.data
-        // console.log(data);
-        setUsers(data)
-      })
-    }, [blogs, users])
+      const loaddata = async () => {
+        let blogResponse = await axios.get(postUrl)
+        let userResponse = await axios.get(userUrl)
+        let userData = await userResponse.data
+        let blogData = await blogResponse.data
+        setUsers(userData)
+        setBlogs(blogData)
+      }
+      loaddata();
+    }, [])
 
     // useEffect(fun)
     // useEffect(fun, [])
