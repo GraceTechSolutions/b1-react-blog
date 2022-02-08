@@ -1,0 +1,19 @@
+.main{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.details{
+    display: flex;
+}
+.details>h4 {
+    margin: 10px 20px;
+}
+
+.details>h4:first-child{
+    margin-left: 0;
+}
+
+.details>h4>span{
+    margin: 0 10px;
+}
