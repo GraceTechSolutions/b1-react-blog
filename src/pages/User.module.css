@@ -1,6 +1,15 @@
 .main{
     max-width: 1000px;
     margin: auto;
+    display: flex;
+    margin-top: 200px;
+}
+.data{
+    padding: 100px 30px;
+}
+.image{
+    grid-row: span 2;
+    width: 400px;
 }
 
 .details{
