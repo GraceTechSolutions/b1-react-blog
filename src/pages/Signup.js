@@ -1,33 +1,63 @@
+import axios from 'axios';
 import React, { useState } from 'react'
+import swal from 'sweetalert';
+
+const url = 'http://9a1f-2405-201-4030-e042-e581-67f4-e29e-b7aa.ngrok.io';
+const endpoint = 'user';
 
 export default function Signup() {
   const [data, setData] = useState({})
   
+  const handleChange = (e) => {
+    // console.log(e);
+    const name = e.target.name
+    const value = e.target.value
+    setData(values =>({...values, [name]:value}))
+  }
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    axios.post(`${url}/${endpoint}`, data)
+    .then((res)=>{
+      let res_id = res.data.id
+      swal({
+        title: "Good job!",
+        text: `Success.. Your User ID is ${res_id}`,
+        icon: "success",
+      });
+      setData({})
+    })
+    .catch((err)=>{
+      swal({
+        title: "Sorry",
+        text: "Form not submitted !",
+        icon: "error",
+      });
+      console.log(err);
+    })
+  }
+  
   return (
     <div>
-      <form onSubmit={(e)=>{ 
-        e.preventDefault();
-        console.log(e);
-        console.log('DONE...');
-        }}>
+      <form onSubmit={submitForm}>
         <div className='form-group'>
           <label htmlFor='uname'>Username</label>
-          <input id='uname' type='text' name='username'></input>
+          <input onChange={handleChange} required id='uname' type='text'value={data.username || ''} name='username'></input>
         </div>
         <br/>
         <div className='form-group'>
           <label htmlFor='passwd'>Password</label>
-          <input id='paaawd' type='password' name='password'></input>
+          <input onChange={handleChange} required id='paaawd' type='password'value={data.password || ''} name='password'></input>
         </div>
         <br/>
         <div className='form-group'>
           <label htmlFor='email'>Email</label>
-          <input id='email' type='email' name='email'></input>
+          <input onChange={handleChange} required id='email' type='email'value={data.email || ''} name='email'></input>
         </div>
         <br/>
         <div className='form-group'>
           <label htmlFor='name'>Full name</label>
-          <input id='name' type='text' name='name'></input>
+          <input onChange={handleChange} required id='name' type='text'value={data.name || ''} name='name'></input>
         </div>
         <br/>
         <div className='form-group'>
