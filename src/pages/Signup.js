@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import swal from 'sweetalert';
 
-const url = 'http://9a1f-2405-201-4030-e042-e581-67f4-e29e-b7aa.ngrok.io';
+const url = 'http://4723-2405-201-4030-e042-41a9-a282-97f3-90fd.ngrok.io';
 const endpoint = 'user';
 
 export default function Signup() {
